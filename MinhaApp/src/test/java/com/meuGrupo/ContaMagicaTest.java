@@ -43,19 +43,20 @@ public class ContaMagicaTest {
     }
 
     @ParameterizedTest
-    @CsvSource({"100001, 0, 2",      //100000
-                "100002, 0, 1",      //99999
-                "100002, 74999, 1",  //25000
-                "100002, 75000, 0",  //24999
-                "175002, 0, 1",      //24999 porem de uma só vez
+    @CsvSource({ "10, 10, 5, 0, 0",               //15
+                "200000, 1, 100001, 0, 2",      //100000
+                "200000, 1, 100002, 0, 1",      //99999
+                "200000, 1, 100002, 74999, 1",  //25000
+                "200000, 1, 100002, 75000, 0",  //24999
+                "200000, 1, 175002, 0, 1",      //24999 porem de uma só vez
                })
-    void testaRetiradaMudancaStatus(int valorA, int valorB, int eRes){        
+    void testaRetiradaMudancaStatus(int valorA, int valorB, int valorC, int valorD, int eRes){        
         try{
-            conta.deposito(200000);
-            conta.deposito(1);
-            conta.retirada(valorA);
+            conta.deposito(valorA);
+            conta.deposito(valorB);
+            conta.retirada(valorC);
             if(valorB != 0)
-                conta.retirada(valorB);
+                conta.retirada(valorD);
         }
         catch(Exception E){}
 
