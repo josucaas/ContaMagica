@@ -9,7 +9,7 @@ Reinicializa a instancia de ContaMagica antes de cada teste:
         this.conta = new ContaMagica();
     }
 
-Teste de verificação dos valores inválidos: Ao fazer um deposito utilizamos os valores (0,-1)  para testar o lançamento das exceções. Já na retirada foram usados (0,1,-1) para testar também a retirada de um valor maior que o saldo.
+Teste de verificação dos valores inválidos: Ao fazer um deposito utilizamos os valores (0,-1)  para testar o lançamento das exceções. Já na retirada foram usados (0,1,-1)o valor "1" foi adicionado  para testar também a retirada de um valor maior que o saldo.
 
 Teste de verificação das mudanças do status da conta ao realizar depósitos: 
 Utilizamos os valores limites para testarmos se as mudanças de SILVER para GOLD estavam ocorrendo corretamente, da mesma forma testamos com os valores limites a mudança de GOLD para PLATINUM. Foi testado também se estava acontecendo apenas uma mudança de status por deposito.
@@ -22,3 +22,5 @@ Teste de verificação do bônus ao depositar dependendo do status da conta:
 Aqui foram feitos testes em contas de deferentes status a fim de verificar se a bonificação estava aplicando a porcentagem sobre o valor depositado corretamente.
 
 Defeitos encontrados: Ao realizar os testes sobre o método que realiza a mudança do status da conta, encontramos alguns problemas nos testes condicionais. Um pequeno erro que ocorreu por falta de atenção.
+
+Ao final, ao testarmos a cobertura de código ele acusou que não estavasendo testada a retirada de dinheiro em uma conta de status SILVER,então adicionamos um novo teste para cobrir 100% do código.
